@@ -1,0 +1,142 @@
+* {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #101010;
+      color: white;
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      background: #181818;
+      padding: 20px;
+      border-right: 1px solid #333;
+      overflow-y: auto;
+    }
+
+    .sidebar h1 {
+      margin-top: 0;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .card {
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 16px;
+    }
+
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: 16px;
+      color: #ffd166;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #ddd;
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background: #111;
+      color: white;
+      font-size: 14px;
+    }
+
+    input[type="range"] {
+      padding: 0;
+    }
+
+    button {
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .btn-blue {
+      background: #2563eb;
+    }
+
+    .btn-green {
+      background: #15803d;
+    }
+
+    .btn-orange {
+      background: #d97706;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .status {
+      color: #ffd166;
+      font-weight: bold;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    .preview {
+      padding: 20px;
+      background: #0c0c0c;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow: auto;
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+      background: black;
+      border: 1px solid #444;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+      cursor: grab;
+    }
+
+    canvas:active {
+      cursor: grabbing;
+    }
+
+    @media (max-width: 1000px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #333;
+      }
+    }

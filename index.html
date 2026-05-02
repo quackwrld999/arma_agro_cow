@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cattle Poster Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <div class="sidebar">
+      <h1>🐄 Cattle Poster Generator</h1>
+
+      <div class="card">
+        <h2>1. Poster Information</h2>
+
+        <label>Brand / Template Type</label>
+        <select id="brand">
+          <option value="ARMA">ARMA</option>
+          <option value="AgroLink">AgroLink</option>
+        </select>
+
+        <label>Cattle No</label>
+        <input type="text" id="cattleNo" value="165" />
+
+        <label>Weight</label>
+        <input type="text" id="weight" value="267 KG" />
+
+        <div class="status">
+          Auto Category: <span id="categoryOutput">GOLD</span>
+        </div>
+
+        <label>Upload Cow Image</label>
+        <input type="file" id="cowImageInput" accept="image/*" />
+
+        <div class="row">
+          <button class="btn-blue" id="generateBtn">Generate</button>
+          <button class="btn-green" id="downloadBtn">Download JPG</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>2. Cow Photo Adjustment</h2>
+
+        <label>Zoom / Size</label>
+        <input type="range" id="photoScale" min="0.40" max="2.80" step="0.01" value="1" />
+
+        <label>Move Left / Right</label>
+        <input type="range" id="photoX" min="-500" max="500" step="1" value="0" />
+
+        <label>Move Up / Down</label>
+        <input type="range" id="photoY" min="-500" max="500" step="1" value="0" />
+
+        <button class="btn-orange" id="resetPhotoBtn">Reset Cow Position</button>
+
+        <div class="note">
+          You can drag the cow image directly with your mouse. You can also zoom using mouse wheel.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>3. Bottom Text Adjustment</h2>
+
+        <label>Cattle No X</label>
+        <input type="range" id="cattleXAdjust" min="-300" max="300" step="1" value="0" />
+
+        <label>Cattle No Y</label>
+        <input type="range" id="cattleYAdjust" min="-300" max="300" step="1" value="0" />
+
+        <label>Weight X</label>
+        <input type="range" id="weightXAdjust" min="-300" max="300" step="1" value="0" />
+
+        <label>Weight Y</label>
+        <input type="range" id="weightYAdjust" min="-300" max="300" step="1" value="0" />
+
+        <button class="btn-orange" id="resetBottomTextBtn">Reset Bottom Text</button>
+      </div>
+
+      <div class="card">
+        <h2>4. Fine Frame Adjustment</h2>
+
+        <div class="note">
+          Use these only if the cow photo frame needs small correction.
+        </div>
+
+        <label>Frame X</label>
+        <input type="range" id="frameXAdjust" min="-150" max="150" step="1" value="0" />
+
+        <label>Frame Y</label>
+        <input type="range" id="frameYAdjust" min="-150" max="150" step="1" value="0" />
+
+        <label>Frame Width</label>
+        <input type="range" id="frameWAdjust" min="-200" max="200" step="1" value="0" />
+
+        <label>Frame Height</label>
+        <input type="range" id="frameHAdjust" min="-200" max="200" step="1" value="0" />
+
+        <button class="btn-orange" id="resetFrameBtn">Reset Frame</button>
+      </div>
+
+      <div class="card">
+        <h2>5. Weight Range Rule</h2>
+        <div class="note">
+          <b>Silver</b> = 120 to 250 kg<br>
+          <b>Gold</b> = 251 to 370 kg<br>
+          <b>Platinum</b> = 371 to 1000 kg
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>6. Template Files Needed</h2>
+        <div class="note">
+          Put these files beside this HTML file:<br><br>
+
+          <b>ARMA</b><br>
+          arma_silver.jpg<br>
+          arma_gold.jpg<br>
+          arma_platinum.jpg<br><br>
+
+          <b>AgroLink</b><br>
+          agrolink_silver.png<br>
+          agrolink_gold.png<br>
+          agrolink_platinum.png
+        </div>
+      </div>
+    </div>
+
+    <div class="preview">
+      <canvas id="posterCanvas" width="1024" height="1536"></canvas>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
